@@ -1,9 +1,9 @@
 'use strict'
 
 // bcrypt docs: https://www.npmjs.com/package/bcrypt
-const bcrypt = require('bcryptjs')
-const Sequelize = require('sequelize')
-const db = require('APP/db')
+const bcrypt = require('bcryptjs');
+const Sequelize = require('sequelize');
+const db = require('APP/db');
 
 const User = db.define('users', {
   name: Sequelize.STRING,
