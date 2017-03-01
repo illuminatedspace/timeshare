@@ -1,15 +1,29 @@
 'use strict'
 
 import React, {Component} from 'react'
+import Products from '../components/Products';
+import { connect } from 'react-redux';
 
-export default class productContainer extends Component {
-    constructor() {
+export default class productsContainer {
+    constructor(){
         super()
     }
-
     render(){
-        return (
-            
+        return(
+            <div>
+            </div>
         )
     }
-} 
+}
+
+const mapStateToProps = (state) => {
+  return {
+    products: state.products.list
+  };
+};
+
+const productsContainer = connect(
+  mapStateToProps
+)(Products);
+
+export default productsContainer;
