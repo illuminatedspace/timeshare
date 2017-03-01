@@ -1,7 +1,7 @@
 {
-  "name": "__BONES_NEEDS_A_NAME__",
+  "name": "timeshare",
   "version": "0.0.1",
-  "description": "A happy little skeleton.",
+  "description": "Grace Shopper project",
   "main": "index.js",
   "scripts": {
     "validate": "check-node-version --node '>= 6.7.0'",
