@@ -10,7 +10,7 @@ const db = require('APP/db')
 const User = db.define('users', {
   name: {
     type: Sequelize.STRING,
-    allowNull: false,
+    notEmpty: true,
   },
   email: {
     type: Sequelize.STRING,
@@ -57,5 +57,4 @@ function setEmailAndPassword(user) {
   )
 }
 
-User.hasMany(Review)
 module.exports = User
