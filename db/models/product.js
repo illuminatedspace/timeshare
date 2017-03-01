@@ -6,7 +6,6 @@ const db = require('APP/db')
 const Product = db.define('products', {
     title: {
         type: Sequelize.STRING,
-        isUnique: true,
         notEmpty: true,
     },
     description:{
