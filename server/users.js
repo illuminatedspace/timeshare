@@ -16,9 +16,9 @@ module.exports = require('express').Router()
 		User.findOne( { where: { email: req.body.email} })
 		.then(user => {
 			if (user) {
-				let err = new Error('Email is already associated with an account');
-				err.status = 400;
-				return next(err);
+				let err = new Error('Email is already associated with an account')
+				err.status = 400
+				return next(err)
 			}
 			else {
 				return User.create(req.body)
