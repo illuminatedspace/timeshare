@@ -3,7 +3,7 @@
 const Sequelize = require('sequelize')
 const db = require('APP/db')
 
-const Review = db.model({
+const Review = db.define({
 	body: {
 		type: Sequelize.TEXT,
 		allowNull: false,
@@ -16,10 +16,6 @@ const Review = db.model({
 			max: 5,
 		},
 	},
-	date: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW,
-	}
 })
 
 module.exports = Review
