@@ -4,7 +4,7 @@ const db = require('APP/db')
 const Product = db.model('products')
 const Category = db.model('categories')
 
-modules.exports = require('express').Router()
+module.exports = require('express').Router()
 	// Get all categories 
 	.get('/', (req, res, next) => {
 		Category.findAll({})
