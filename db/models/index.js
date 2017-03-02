@@ -10,7 +10,8 @@ const Review = require('./review')
 
 OAuth.belongsTo(User)
 User.hasOne(OAuth)
+Review.belongsTo(User)
 User.hasMany(Review)
-Product.belongsto(Category)
+Product.belongsTo(Category)
 Category.hasMany(Product)
 module.exports = {User}
