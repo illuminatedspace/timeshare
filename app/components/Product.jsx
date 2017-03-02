@@ -13,9 +13,9 @@ const Product = (props) => {
                 <p>{ product.description }</p>
                 <p>{ product.price }</p>
                 <form>
-                    <label for="quantity">quantity</label>
-                    <input type="number" name="quantity" id="quantity" onChange={} />
-                    <button type="submit" onSubmit={}>Add to Cart</button>
+                    <label for="quantity">Quantity</label>
+                    <input type="number" name="quantity" id="quantity" onChange={props.handleChange} />
+                    <button type="submit" onSubmit={props.handleSubmit}>Add to Cart</button>
                 </form>
             </div>
         </div>
