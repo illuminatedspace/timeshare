@@ -32,7 +32,7 @@ const seedCategory = () => db.Promise.map([
 
 db.didSync
   .then(() => db.sync({force: true}))
-  .then(seedUsers)
-  .then(users => console.log(`Seeded ${users.length} users OK`))
+  .then(() => Promise.all([seedUsers(), seedProducts(), seedCategory()]))
+  .then((results) => console.log(`~~~~~~~~Promise.all results`, results))
   .catch(error => console.error(error))
   .finally(() => db.close())
