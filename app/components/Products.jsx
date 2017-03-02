@@ -1,10 +1,10 @@
 // Components receive props from containers and render
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router'
 
 export default function Products (props) {
 
-  const products = props.products;
+  const products = props.products
   // COMPLETELY unstyled render of product list
   return (
     <div>
@@ -27,5 +27,5 @@ export default function Products (props) {
         }
       </div>
     </div>
-  );
-};
+  )
+}
