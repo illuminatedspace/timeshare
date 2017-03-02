@@ -1,5 +1,4 @@
 'use strict'
-//const Review = require('./review')
 
 // bcrypt docs: https://www.npmjs.com/package/bcrypt
 const bcrypt = require('bcryptjs')
@@ -15,9 +14,9 @@ const User = db.define('users', {
   },
   email: {
     type: Sequelize.STRING,
+    allowNull: false,
     validate: {
-			isEmail: true,
-      allowNull: false,
+      isEmail: true,
 			notEmpty: true,
 		}
   },
