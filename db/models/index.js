@@ -18,5 +18,6 @@ Product.belongsTo(Category)
 Category.hasMany(Product)
 Review.belongsTo(User)
 User.hasMany(Review)
+Order.belongsTo(User)
 
 module.exports = {User, Category, Product, Review}
