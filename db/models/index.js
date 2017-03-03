@@ -10,6 +10,7 @@ const OAuth = require('./oauth')
 const Review = require('./review')
 const Product = require('./product')
 const Category = require('./category')
+const Order = require('./order')
 
 OAuth.belongsTo(User)
 User.hasOne(OAuth)
