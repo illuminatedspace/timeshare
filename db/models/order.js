@@ -36,7 +36,7 @@ const Order = db.define({
             if((this.products.length === this.prices.length) && (this.prices.length === this.quantities.length)) {
                 return true
             } else { // If lengths are not equal, throw error
-                throw new Error('Array lengths are not equal. Order item index not be consistent across prices, quantities, products arrays.')
+                throw new Error('Array lengths are not equal. Order item index not consistent across prices, quantities, products arrays.')
             }
         }
     }
