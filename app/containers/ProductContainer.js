@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import reducer from '../reducers/auth';
 
 class ProductContainer extends Component {
-    constructor () {
-        super()
+    constructor (props) {
+        super(props)
         this.state = {
             quantity: 0,
         }
@@ -20,12 +20,15 @@ class ProductContainer extends Component {
 // handles click of Add to Cart button
     handleSubmit (event) {
         event.preventDefault()
-        this.props.addToCart(this.state.quantity)
+        //passing in 'this' was also floated
+        this.props.addToCart(this.id, this.state.quantity)
         this.setState({quantity: 0})
     }
 // passes handlers to component
     render () {
-        <Product handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        return (
+            <Product handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        )
     }
 }
 // passes local state of container to component
@@ -42,9 +45,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
     }
 }
-const productContainer = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Product)
-
-export default productContainer
+)(ProductContainer)
