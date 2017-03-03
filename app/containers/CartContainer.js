@@ -11,24 +11,27 @@ class CartContainer extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-// handles info typed into quantity box
+// TODO: handles info typed into quantity box
     handleChange (event) {
-        this.setState({cart.quantities: event.target.value})
+        this.setState({cart.quantities: })
     }
-
-// 
-
+// TODO: figure out this flag
+    handleCheckout (event) {
+        let visible = false
+    }
 // passes props to Cart and Checkout Components
+// TODO: ternary statement for Checkout visibility
     render () {
         return (
             <div>
                 <Cart handleChange={this.handleChange} handleCheckout={this.handleCheckout} {...this.props}/>
+                
                 <Checkout handlehandleSubmit/>
             </div>
         )
     }
 }
-// passes local state of container to components
+// passes local state of container to container and components
 const mapStateToProps = (state) => {
   return {
     cart: state.cart
@@ -37,13 +40,16 @@ const mapStateToProps = (state) => {
 // ADD TO CART is a dispatcher which should go in product reducer
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        updateCart: () => {
-            dispatch(updateCart)
+        updateQuant: () => {
+            dispatch(updateQuant)
         },
+        removeProduct: () => {
+            dispatch(removeProduct)
+        }
     }
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProductContainer)
+)(CartContainer)
