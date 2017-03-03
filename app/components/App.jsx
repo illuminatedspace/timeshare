@@ -1,20 +1,28 @@
 import React, {Component} from 'react'
 
-// import NavbarContainer from '../containers/NavbarContainer'
+//needed for onTouchTap
+//http://www.material-ui.com/#/get-started/installation
+import injectTapEventPlugin from 'react-tap-event-plugin'
+
+//equivalent to nav bar
+import AppBar from 'material-ui/AppBar'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 // import Footer from './Footer'
 
 
-//unstyled jsx - to be materialized!
-//the navbarContainer and footer may need to be wrapped in other divs, depends on how material works
+//
+//need to be wrapped in other divs for custom rendering with material
 export default function App ({ children }) {
   return (
-    <div>
-      {/*<NavbarContainer />*/}
+    <MuiThemeProvider>
       <div>
-        { children }
+        <AppBar />
+        <div>
+          { children }
+        </div>
+        {/*<Footer />*/}
       </div>
-      {/*<Footer />*/}
-    </div>
+    </MuiThemeProvider>
   )
 }
