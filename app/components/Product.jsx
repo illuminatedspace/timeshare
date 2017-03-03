@@ -1,7 +1,7 @@
 // Receives props from ProductContainer
 import React from 'react';
 
-export default Product = (props) => {
+const Product = (props) => {
 
     const product = props.selectedProduct
 // renders selected product & allows user to add chosen quantity to cart
@@ -21,3 +21,5 @@ export default Product = (props) => {
         </div>
     )
 }
+
+export default Product

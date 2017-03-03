@@ -30,7 +30,7 @@ const Product = db.define('products', {
     },
     photo: {
         type: Sequelize.STRING,
-        defaultValue: 'https://pixabay.com/photo-1752164/',
+        defaultValue: 'http://fillmurray.com/g/200/300',
     },
 }, {});
 

@@ -3,11 +3,11 @@
 const Sequelize = require('sequelize')
 const db = require('APP/db')
 
-const Review = db.define({
+const Review = db.define('review', {
 	body: {
 		type: Sequelize.TEXT,
 		allowNull: false,
-	}, 
+	},
 	rating: {
 		type: Sequelize.INTEGER,
 		allowNull: false,
