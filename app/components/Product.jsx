@@ -2,7 +2,6 @@
 import React from 'react';
 
 const Product = (props) => {
-
     const product = props.selectedProduct
 // renders selected product & allows user to add chosen quantity to cart
     return (
@@ -13,7 +12,7 @@ const Product = (props) => {
                 <p>{ product.description }</p>
                 <p>{ product.price }</p>
                 <form onSubmit={props.handleSubmit}>
-                    <label for="quantity">Quantity</label>
+                    <label htmlFor="quantity">Quantity</label>
                     <input type="number" name="quantity" id="quantity" onChange={props.handleChange} />
                     <button type="submit">Add to Cart</button>
                 </form>

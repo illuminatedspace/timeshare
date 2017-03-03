@@ -12,11 +12,17 @@ import ProductContainer from './containers/ProductContainer'
 // import WhoAmI from './components/WhoAmI'
 import App from './components/App'
 
-import {fetchProducts} from './reducers/products'
+import {fetchProducts, fetchProductById} from './reducers/products'
 
 function onProductsEnter() {
   store.dispatch(fetchProducts())
 }
+
+// do we really need to go fetch this info again? Maybe to get reviews....
+function onProductEnter(nextRouterState) {
+  const productId = nextRouterState.params.productId;
+  store.dispatch(fetchProductById(productId));
+};
 
 //this is the React.DOM render method
 render(
@@ -24,7 +30,7 @@ render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <Route path="/products" component={ProductsContainer} onEnter={onProductsEnter} />
-          <Route path="/products/:productId" component={ProductContainer} />
+          <Route path="/products/:productId" component={ProductContainer}  onEnter={onProductEnter} />
         <IndexRedirect to="/products" />
       </Route>
     </Router>
