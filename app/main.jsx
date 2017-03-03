@@ -5,8 +5,8 @@ import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
 import store from './store'
 
-import ProductsContainer from './container/ProductsContainer'
-import ProductContainer from './container/ProductContainer'
+import ProductsContainer from './containers/ProductsContainer'
+import ProductContainer from './containers/ProductContainer'
 
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
