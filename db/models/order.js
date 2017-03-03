@@ -25,7 +25,6 @@ const Order = db.define({
         defaultValue: 'created',
         allowNull: false,
     },
-
     // Virtual property to return array of item objects [{productId: ___, quantity: ___, price: ___}] built from 3 item info arrays
     items: {
         type: Sequelize.VIRTUAL,
