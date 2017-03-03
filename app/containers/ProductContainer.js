@@ -10,7 +10,7 @@ class ProductContainer extends Component {
         this.state = {
             quantity: 0,
         }
-        console.log('inside Product Container props=', this.props)
+
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
