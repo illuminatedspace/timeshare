@@ -4,14 +4,15 @@ import {Link} from 'react-router'
 
 export default function Products (props) {
 
-  const products = props.products
+  const products = props.products.products
   // COMPLETELY unstyled render of product list
+  console.log('~~~~~~~~~products', products)
   return (
     <div>
       <h2>Products</h2>
       <div>
         {
-          products && products.map(product => (
+          products.length && products.map(product => (
             <div key={product.id}>
               <Link to={`/products/${product.id}`}>
                 <img src={product.photo}/>

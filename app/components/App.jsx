@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 
-import NavbarContainer from '../containers/NavbarContainer'
+// import NavbarContainer from '../containers/NavbarContainer'
 
-import Footer from './Footer'
+// import Footer from './Footer'
 
 
 //unstyled jsx - to be materialized!
@@ -10,11 +10,11 @@ import Footer from './Footer'
 export default function App ({ children }) {
   return (
     <div>
-      <NavbarContainer />
+      {/*<NavbarContainer />*/}
       <div>
         { children }
       </div>
-      <Footer />
+      {/*<Footer />*/}
     </div>
   )
 }
