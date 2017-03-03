@@ -19,6 +19,9 @@ const reducer = (state = initialProductsState, action) => {
         case RECEIVE_PRODUCT:
             newState.selected = action.product
             return newState     
+        //does this belong on the cart reducer?
+        case ADD_TO_CART:
+          
 
         default:
             return state
@@ -56,5 +59,7 @@ export const receiveProducts = products => ({
 export const receiveProduct = product => ({
   type: RECEIVE_PRODUCT, product
 })
+
+export const addToCart = selected
 
 export default reducer
