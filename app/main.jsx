@@ -24,7 +24,7 @@ render (
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <Route path="/products" component={ProductsContainer} onEnter={onProductsEnter}/>
-        <Route path="/products/:productId" component={ProductContainer} />
+          <Route path="/products/:productId" component={ProductContainer} />
         <IndexRedirect to="/products" />
       </Route>
     </Router>
