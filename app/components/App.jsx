@@ -7,6 +7,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 //equivalent to nav bar
 import AppBar from 'material-ui/AppBar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Paper from 'material-ui/Paper'
 
 // import Footer from './Footer'
 
