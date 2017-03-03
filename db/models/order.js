@@ -19,11 +19,30 @@ const Order = db.define({
         allowNull: false,
         isArray: true,
     },
-    status: { // “Created”/ “Processing”/ “Cancelled”/ “Completed”
+    status: {
         type: Sequelize.ENUM,
         values: ['created', 'processing', 'cancelled', 'completed'],
         defaultValue: 'created',
         allowNull: false,
+    },
+
+    // Virtual property to return array of item objects [{productId: ___, quantity: ___, price: ___}] built from 3 item info arrays
+    items: {
+        type: Sequelize.VIRTUAL,
+        get: function() {
+            var orderItems = []
+            var products = this.getDataValue('products')
+            var quantities = this.getDataValue('quantities')
+            var prices = this.getDataValue('prices')
+            products.forEach((productId, i) => {
+                orderItems.push({
+                    productId: productId, 
+                    quantity: quantities[i],
+                    price: prices[i],
+                })
+            })
+            return orderItems;
+        }
     }
 }, {
     validate: {
@@ -39,5 +58,5 @@ const Order = db.define({
                 throw new Error('Array lengths are not equal. Order item index not consistent across prices, quantities, products arrays.')
             }
         }
-    }
+    }, 
 });
