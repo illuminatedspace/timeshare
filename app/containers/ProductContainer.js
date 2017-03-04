@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import Product from '../components/Product'
 import { connect } from 'react-redux'
-import reducer from '../reducers/auth';
+import reducer from '../reducers/auth'
 
 class ProductContainer extends Component {
     constructor (props) {
@@ -31,6 +31,7 @@ class ProductContainer extends Component {
         )
     }
 }
+
 // passes local state of container to component
 const mapStateToProps = (state) => {
   return {
