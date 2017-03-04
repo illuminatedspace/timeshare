@@ -30,7 +30,7 @@ render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <Route path="/products" component={ProductsContainer} onEnter={onProductsEnter} />
-          <Route path="/products/:productId" component={ProductContainer}  onEnter={onProductEnter} />
+        <Route path="/products/:productId" component={ProductContainer}  onEnter={onProductEnter} />
         <IndexRedirect to="/products" />
       </Route>
     </Router>

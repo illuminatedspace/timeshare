@@ -30,7 +30,7 @@ class ProductContainer extends Component {
         })
     }
 // passes handlers to component
-    render () {   
+    render () {
         return (
             <Product 
                 handleChange={this.handleChange} 
