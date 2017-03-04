@@ -4,12 +4,6 @@ import {Link} from 'react-router'
 
 import Paper from 'material-ui/Paper'
 
-// const style = {
-//   height: 100,
-//   width: 100,
-//   margin: 20,
-// }
-
 export default function Products (props) {
 
 //change to products.all
