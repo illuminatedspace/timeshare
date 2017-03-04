@@ -19,6 +19,5 @@ Category.hasMany(Product)
 Review.belongsTo(User)
 User.hasMany(Review)
 Order.belongsTo(User)
-User.hasMany(Order)
 
 module.exports = {User, Category, Product, Review}
