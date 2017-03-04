@@ -2,6 +2,8 @@
 import React from 'react';
 import {Link} from 'react-router'
 
+import Paper from 'material-ui/Paper'
+
 // const style = {
 //   height: 100,
 //   width: 100,
@@ -12,7 +14,6 @@ export default function Products (props) {
 
 //change to products.all
   const products = props.products.products
-  // COMPLETELY unstyled render of product list
   return (
     <div>
       <h1>Takin' time to make time!</h1>
@@ -21,17 +22,19 @@ export default function Products (props) {
         <div>
           {
             products.length && products.map(product => (
-              <div key={product.id}>
-                <Link to={`/products/${product.id}`}>
-                  <img src={product.photo}/>
-                  <div>
-                    <h3>
-                      <span>{product.name}</span>
-                    </h3>
-                    <p>{product.description}</p>
-                  </div>
-                </Link>
-              </div>
+              <Paper zDepth={1}>
+                <div key={product.id}>
+                  <Link to={`/products/${product.id}`}>
+                    <img src={product.photo}/>
+                    <div>
+                      <h3>
+                        <span>{product.name}</span>
+                      </h3>
+                      <p>{product.description}</p>
+                    </div>
+                  </Link>
+                </div>
+              </Paper>
             ))
           }
         </div>

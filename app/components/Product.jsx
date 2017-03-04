@@ -10,7 +10,7 @@ const Product = (props) => {
     const product = props.selectedProduct
 // renders selected product & allows user to add chosen quantity to cart
     return (
-        <Paper>
+        <Paper zDepth={1}>
             <div className="floating card">
                 <h2>{ product.title }</h2>
                 <img src={ product.photo } />
