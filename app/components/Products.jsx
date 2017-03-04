@@ -2,9 +2,6 @@
 import React from 'react';
 import {Link} from 'react-router'
 
-//makes a container for the components
-import Paper from 'material-ui/Paper'
-
 // const style = {
 //   height: 100,
 //   width: 100,

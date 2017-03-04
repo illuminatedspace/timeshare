@@ -12,7 +12,6 @@ import Paper from 'material-ui/Paper'
 // import Footer from './Footer'
 
 
-//
 //need to be wrapped in other divs for custom rendering with material
 export default function App ({ children }) {
   return (
