@@ -11,7 +11,7 @@ export default function Products (props) {
   return (
     <div>
       <h1>Takin' time to make time!</h1>
-      <div id="dynamic-view">
+      <div>
         <h2>Products</h2>
         <div>
           {
