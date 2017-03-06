@@ -18,7 +18,7 @@ export default function App ({ children }) {
     <MuiThemeProvider>
       <div>
         <AppBar />
-        <div>
+        <div id='dynamic-view'>
           { children }
         </div>
         {/*<Footer />*/}
