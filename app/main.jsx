@@ -11,6 +11,7 @@ import ProductContainer from './containers/ProductContainer'
 // import Login from './components/Login'
 // import WhoAmI from './components/WhoAmI'
 import App from './components/App'
+/*import Cart from './components/Cart'*/
 
 import {fetchProducts, fetchProductById} from './reducers/products'
 
@@ -22,7 +23,7 @@ function onProductsEnter() {
 function onProductEnter(nextRouterState) {
   const productId = nextRouterState.params.productId;
   store.dispatch(fetchProductById(productId));
-};
+}
 
 //this is the React.DOM render method
 render(
@@ -31,6 +32,7 @@ render(
       <Route path="/" component={App}>
         <Route path="/products" component={ProductsContainer} onEnter={onProductsEnter} />
         <Route path="/products/:productId" component={ProductContainer}  onEnter={onProductEnter} />
+{/*        <Route path="/cart" component={Cart} />*/}
         <IndexRedirect to="/products" />
       </Route>
     </Router>
