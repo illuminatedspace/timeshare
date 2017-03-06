@@ -4,7 +4,7 @@ const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS'
 const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT'
 
 const initialProductsState = {
-  all: [],
+  products: [],
   selected: {}
 }
 
