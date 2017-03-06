@@ -30,7 +30,7 @@ const Product = db.define('products', {
     },
     photo: {
         type: Sequelize.STRING,
-        defaultValue: 'http://fillmurray.com/g/200/300',
+        defaultValue: 'http://fillmurray.com/g/300/300',
     },
 }, {});
 

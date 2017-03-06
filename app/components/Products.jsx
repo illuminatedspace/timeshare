@@ -11,24 +11,27 @@ export default function Products (props) {
   return (
     <div>
       <h1>Takin' time to make time!</h1>
-      <div id="dynamic-view">
+      <div>
         <h2>Products</h2>
-        <div>
+        <div className="products">
           {
             products.length && products.map(product => (
-              <Paper zDepth={1}>
-                <div key={product.id}>
-                  <Link to={`/products/${product.id}`}>
-                    <img src={product.photo}/>
-                    <div>
-                      <h3>
-                        <span>{product.name}</span>
+              <div key={product.id}>
+                <Link to={`/products/${product.id}`}>
+                  <Paper zDepth={2} className="product-card">
+                    <Paper zDepth={3} className="product-img">
+                      <img src={product.photo} />
+                    </Paper>
+                    <div className="product-info">
+                      <h3 className="product-name">
+                        <span>{product.title}</span>
                       </h3>
                       <p>{product.description}</p>
+                      <span className="product-price">$ {product.price}</span>
                     </div>
-                  </Link>
-                </div>
-              </Paper>
+                  </Paper>
+                </Link>
+              </div>
             ))
           }
         </div>

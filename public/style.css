@@ -1,8 +1,5 @@
 html {
   font-family: 'Roboto', sans-serif;
-}
-
-body {
   /*BG GRADIENT*/
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9a7cc+0,f7e3f5+50,cee7e8+100 */
   background: #a9a7cc; /* Old browsers */
@@ -12,7 +9,44 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9a7cc', endColorstr='#cee7e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-#dynamic-view {
-  padding: 40px;
+.product-name {
+  font-size: 3em;
 }
 
+/*this container makes everything below the app bar a step in*/
+#dynamic-view {
+  padding: 0 40px;
+}
+
+.products {
+  margin: 0 40px;
+}
+
+.product-card {
+  margin: 40px 0;
+  padding: 20px;
+  display: flex;
+  text-decoration: none;
+}
+
+.product-card .product-img {
+  display: inline;
+}
+
+.product-card .product-info {
+  margin: 0 0 0 10px;
+  padding: 0 0 0 10px;
+}
+
+.product-card .product-info {
+  margin: 0 0 0 10px;
+  padding: 0 0 0 10px;
+}
+
+.product-card .product-info p, .product-price {
+  font-size: 2em;
+}
+
+.product-card .product-info .submit {
+  margin: 0 0 0 20px;
+}
