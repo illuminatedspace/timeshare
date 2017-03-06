@@ -4,8 +4,10 @@ import React, {Component} from 'react'
 //http://www.material-ui.com/#/get-started/installation
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
+// import NavbarContainer from '../containers/NavbarContainer'
+
 //equivalent to nav bar
-import AppBar from 'material-ui/AppBar'
+import PrimaryNavBar from '../components/PrimaryNavBar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Paper from 'material-ui/Paper'
 
@@ -17,7 +19,7 @@ export default function App ({ children }) {
   return (
     <MuiThemeProvider>
       <div>
-        <AppBar />
+        <PrimaryNavBar />
         <div id='dynamic-view'>
           { children }
         </div>
