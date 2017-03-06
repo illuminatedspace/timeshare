@@ -17,7 +17,7 @@ class CartContainer extends Component {
     }
 // TODO: figure out this flag
     handleCheckout (event) {
-        let visible = false
+        let checkout = false
     }
 // passes props to Cart and Checkout Components
 // TODO: ternary statement for Checkout visibility
@@ -25,7 +25,7 @@ class CartContainer extends Component {
         return (
             <div>
                 <Cart handleChange={this.handleChange} handleCheckout={this.handleCheckout} {...this.props}/>
-                
+                {}
                 <Checkout handlehandleSubmit/>
             </div>
         )
