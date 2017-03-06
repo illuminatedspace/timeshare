@@ -1,0 +1,18 @@
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  /*BG GRADIENT*/
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9a7cc+0,f7e3f5+50,cee7e8+100 */
+  background: #a9a7cc; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #a9a7cc 0%, #f7e3f5 50%, #cee7e8 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #a9a7cc 0%,#f7e3f5 50%,#cee7e8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #a9a7cc 0%,#f7e3f5 50%,#cee7e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9a7cc', endColorstr='#cee7e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#dynamic-view {
+  padding: 40px;
+}
+
