@@ -29,10 +29,10 @@ class CartContainer extends Component {
     render () {
         return (
             <div>
-                <Cart 
-                handleChange={this.handleChange} 
-                handleCheckout={this.handleCheckout} 
-                handleUpdate={this.props.updateQuant} 
+                <Cart
+                handleChange={this.handleChange}
+                handleCheckout={this.handleCheckout}
+                handleUpdate={this.props.updateQuant}
                 {...this.props}/>
                 {}
                 {/*<Checkout handleSubmit={handleSubmit}/>*/}
