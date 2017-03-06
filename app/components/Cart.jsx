@@ -14,15 +14,15 @@ const Cart = (props) => {
                 <h2>Cart</h2>
                 <form onSubmit={props.handleSubmit}>
                     <ul>
-                        {products && products.forEach(function(element, i) {
+                        {products && products.map(function(element, i) {
                                 return (
-                                <li>{quantities[i]} {products[i]} {prices[i]}</li>
-                                <input type="number" name="quantity" id="quantity" onChange={props.handleChange} />
-                                <button>
-                                )
+                                <li>{quantities[i]} {products[i]} {prices[i]}
+                                <input type="number" name="quantity" id="quantity" onChange={props.handleChange} />   
+                                </li>)
                             })
                         }
                     </ul>
+                    <button type="submit" onSubmit={props.handleUpdate}>Update</button>
                 </form>
                 <button type="submit">Checkout</button>   
             </div>
