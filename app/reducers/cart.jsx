@@ -14,8 +14,8 @@ const reducer = (state = initialCartState, action) => {
 
     switch(action.type) {
         case ADD_TO_CART:
-            newState.productIds.concat([action.id])
-            newState.quantities.concat([action.quantity])
+            newState.productIds.concat([action.id]) // newState.productIds =    (this stuff)
+            newState.quantities.concat([action.quantity]) // see above 
             break
 
         case UPDATE_QUANT:
@@ -25,8 +25,8 @@ const reducer = (state = initialCartState, action) => {
 
         case REMOVE_PRODUCT:
             const ind = productIds.indexOf(action.id)
-            newState.productIds.filter(id => id !== action.id)
-            newState.quantities.filter((quantity, i) => i !== ind)
+            newState.productIds.filter(id => id !== action.id)  // filter also returns new array, so need 
+            newState.quantities.filter((quantity, i) => i !== ind) // a statement of assignment
             break     
 
         default:
@@ -38,13 +38,13 @@ const reducer = (state = initialCartState, action) => {
 /* --------- ACTION CREATORS ---------- */
 export const addToCart = (id, quantity) => ({
     type: ADD_TO_CART,
-    id: id, 
-    quantity: quantity,
+    id: id,                     // es6 object literal syntax to save effort:   id
+    quantity: quantity,                                                        //quantity
 })
 
 export const updateQuant = (id, quantity) => ({
     type: UPDATE_QUANT,
-    id: id, 
+    id: id,                    // es6, see above -- as you did on line 53
     quantity: quantity,
 })
 

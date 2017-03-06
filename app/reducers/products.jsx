@@ -4,7 +4,7 @@ const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS'
 const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT'
 
 const initialProductsState = {
-  products: [],
+  products: [],  // items? catalog?  change name to avoid products.products 
   selected: {}
 }
 

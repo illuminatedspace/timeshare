@@ -15,7 +15,7 @@ import App from './components/App'
 
 import {fetchProducts, fetchProductById} from './reducers/products'
 
-function onProductsEnter() {
+function onProductsEnter() { // potentially check for products on state already 
   store.dispatch(fetchProducts())
 }
 
