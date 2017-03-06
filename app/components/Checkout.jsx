@@ -32,6 +32,10 @@ export default class Checkout extends Component{
     })
   }
 
+  handleSubmit (event) {
+
+  }
+
   render () {
     return (
       <Paper zDepth={1}>
