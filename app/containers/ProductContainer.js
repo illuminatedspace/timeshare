@@ -1,14 +1,16 @@
 // Container pulls state and passes to product component as props
 import React, {Component} from 'react'
-import Product from '../components/Product'
 import { connect } from 'react-redux'
-import reducer from '../reducers/auth'
+import { Link } from 'react-router';
+
+import Product from '../components/Product'
+import { addToCart } from '../reducers/cart'
 
 class ProductContainer extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            quantity: 0,
+            quantity: 1,
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -23,19 +25,24 @@ class ProductContainer extends Component {
 // handles click of Add to Cart button
     handleSubmit (event) {
         event.preventDefault()
+        console.log('inside handleSubmit of ProductCotainer this.props=', this.props)
         //passing in 'this' was also floated
-        this.props.addToCart(this.id, this.state.quantity)
+        this.props.addToCart(this.props.selectedProduct.id, this.state.quantity)
         this.setState({
-            quantity: 0
+            quantity: 1
         })
     }
 // passes handlers to component
     render () {
         return (
-            <Product 
-                handleChange={this.handleChange} 
-                handleSubmit={this.handleSubmit} 
-                selectedProduct={this.props.selectedProduct}/>
+            <div>
+                {/* Link being here is temporary, for testing purposes*/}
+                <Link to='/cart'>Cart</Link>
+                <Product 
+                    handleChange={this.handleChange} 
+                    handleSubmit={this.handleSubmit} 
+                    selectedProduct={this.props.selectedProduct}/>
+            </div>
         )
     }
 }
@@ -46,11 +53,11 @@ const mapStateToProps = (state) => {
     selectedProduct: state.products.selected
   }
 }
-// ADD TO CART is an action creator which should go in product reducer
+// addToCart is an action creator which should go in cart reducer
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        addToCart: () => {
-            dispatch(addToCart)
+        addToCart: (id, quantity) => {
+            dispatch(addToCart(id, quantity))
         },
     }
 }

@@ -14,8 +14,8 @@ const reducer = (state = initialCartState, action) => {
 
     switch(action.type) {
         case ADD_TO_CART:
-            newState.productIds.concat([action.id])
-            newState.quantities.concat([action.quantity])
+            newState.productIds = newState.productIds.concat([action.id])
+            newState.quantities = newState.quantities.concat([action.quantity])
             break
 
         case UPDATE_QUANT:
@@ -39,7 +39,7 @@ const reducer = (state = initialCartState, action) => {
 export const addToCart = (id, quantity) => ({
     type: ADD_TO_CART,
     id: id, 
-    quantity: quantity,
+    quantity: quantity
 })
 
 export const updateQuant = (id, quantity) => ({
@@ -50,7 +50,7 @@ export const updateQuant = (id, quantity) => ({
 
 export const removeProduct = (id) => ({
     type: REMOVE_PRODUCT,
-    id
+    id: id
 })
 
 /* ---------- EXPORT ------------ */

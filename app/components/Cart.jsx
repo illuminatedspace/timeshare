@@ -4,21 +4,27 @@ import React from 'react';
 const Cart = (props) => {
 
     const quantities = props.cart.quantities
-    const products = props.cart.products
-    const prices = props.cart.prices
-// renders selected product & allows user to add chosen quantity to cart
-// TODO: total, remove button, update quant button
+    const productIds = props.cart.productIds
+    const products = props.productsInCart
+    //right now we don't have prices on the state
+    //const prices = props.cart.prices
+
+    console.log('inside Cart component, props=', props)
+
+    // renders selected product & allows user to add chosen quantity to cart
+    // TODO: total, remove button, update quant button
     return (
         <div>
             <div>
                 <h2>Cart</h2>
                 <form onSubmit={props.handleSubmit}>
                     <ul>
-                        {products && products.map(function(element, i) {
+                        {
+                            products && products.map(function(element, i) {
                                 return (
-                                <li>{quantities[i]} {products[i]} {prices[i]}
-                                <input type="number" name="quantity" id="quantity" onChange={props.handleChange} />   
-                                </li>)
+                                    <li key={products[i].id}> {products[i].title} ${products[i].price} {/*prices[i]*/}
+                                        <input type="number" name="quantity" id="quantity" value={quantities[i]} min="1" max="5" onChange={props.handleChange}/>   
+                                    </li>)
                             })
                         }
                     </ul>
