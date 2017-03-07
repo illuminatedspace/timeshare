@@ -14,32 +14,58 @@ export default class Checkout extends Component{
   constructor (props) {
     super(props)
     this.state = {
-      name: null,
-      address: null,
-      apartmentNumber: null,
-      city: null,
-      state: null,
-      zipCode: null,
-      ccn: null,
-      securityNumber: null,
-      expirationDate: null,
+      shippingAddress: {
+        name: null,
+        address: null,
+        apartmentNumber: null,
+        city: null,
+        state: null,
+        zipCode: null,
+      },
+      payment: {
+        ccn: null,
+        securityNumber: null,
+        expirationDate: null,
+      },
     }
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange (event) {
+  handleAddressChange (event) {
     const target = event.target
     const value = target.value
 
     this.setState({
-      [name]: value
+      address: {
+        [name]: value
+      }
     })
   }
 
-/*THIS NEEDS TO BE IN CART CONTAINER
-  handleSubmit (event) {
+  handlePaymentChange (event) {
+    const target = event.target
+    const value = target.value
 
-  }*/
+    this.setState({
+      payment: {
+        [name]: value
+      }
+    })
+  }
+
+//THIS NEEDS TO BE IN CART CONTAINER
+//also import processPayment, and submit order action creator from order reducer
+  handleSubmit (event) {
+    event.preventDefault()
+    let status = this.props.storeOrder(this.state.shippingAddress)
+    this.setState({
+      payment: {
+        ccn: null,
+        securityNumber: null,
+        expirationDate: null,
+      }
+    })
+  }
 
   render () {
     return (

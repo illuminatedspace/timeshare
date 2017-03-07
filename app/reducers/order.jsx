@@ -1,31 +1,24 @@
 import axios from 'axios'
 import cartState from './cart'
 /* ---------- CONSTANTS ------------ */
+const PROCESS_PAYMENT = 'PROCESS_PAYMENT'
 const SUBMIT_ORDER = 'SUBMIT_ORDER'
 /* ----------- REDUCER ------------- */
 const initialOrderState = {
-  status: unconfirmed,
-  prices: [],
+  status: 'unconfirmed',
+  shippingAddress: {},
+  cart: {},
 }
 
-const reducer = (state = initialCartState, action) => {
-    const newState = Object.assign({}, state)
+const reducer = (state = initialOrderState, action) => {
 
-    switch(action.type) {
-        case ADD_TO_CART:
-            newState.productIds.concat([action.id])
-            newState.quantities.concat([action.quantity])
+    switch (action.type) {
+        case PROCESS_PAYMENT:
+            newState = Object.assign({}, state, {status: 'paid'})
             break
 
-        case UPDATE_QUANT:
-            const index = productIds.indexOf(action.id)
-            newState.quantities[index] = action.quantity
-            break
-
-        case REMOVE_PRODUCT:
-            const ind = productIds.indexOf(action.id)
-            newState.productIds.filter(id => id !== action.id)
-            newState.quantities.filter((quantity, i) => i !== ind)
+        case SUBMIT_ORDER:
+            newState = Object.assign({}, state, {shippingAddress: action.shippingAddress, status: 'created'})
             break
 
         default:
@@ -35,22 +28,27 @@ const reducer = (state = initialCartState, action) => {
 
 }
 /* --------- ACTION CREATORS ---------- */
-export const addToCart = (id, quantity) => ({
-    type: ADD_TO_CART,
-    id: id,
-    quantity: quantity,
+export const processPayment = (payment) => ({
+    type: PROCESS_PAYMENT,
+    ccn: payment.ccn,
+    securityNumber: payment.securityNumber,
+    expirationDate: payment.expirationDate,
 })
 
-export const updateQuant = (id, quantity) => ({
-    type: UPDATE_QUANT,
-    id: id,
-    quantity: quantity,
+export const submitOrder = (shippingAddress) => ({
+    type: SUBMIT_ORDER,
+    shippingAddress: shippingAddress,
 })
 
-export const removeProduct = (id) => ({
-    type: REMOVE_PRODUCT,
-    id
-})
+/* --------- ASYNC ACTION CREATORS ---------- */
+export const storeOrder = (address) =>
+    dispatch => {
+        let order = {status: 'created',
+                     shippingAddress: address}
+        axios.post('/api/orders', order)
+        .then(() => dispatch(submitOrder(order.shippingAddress)))
+        .catch(console.error)
+    }
 
 /* ---------- EXPORT ------------ */
 export default reducer

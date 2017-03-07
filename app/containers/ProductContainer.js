@@ -32,9 +32,9 @@ class ProductContainer extends Component {
 // passes handlers to component
     render () {
         return (
-            <Product 
-                handleChange={this.handleChange} 
-                handleSubmit={this.handleSubmit} 
+            <Product
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
                 selectedProduct={this.props.selectedProduct}/>
         )
     }
@@ -49,8 +49,8 @@ const mapStateToProps = (state) => {
 // ADD TO CART is an action creator which should go in product reducer
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        addToCart: () => {
-            dispatch(addToCart)
+        addToCart: (id, quantity, price) => {
+            dispatch(addToCart(id, quantity, price))
         },
     }
 }
