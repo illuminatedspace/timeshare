@@ -23,7 +23,8 @@ function onProductsEnter() {
 // do we really need to go fetch this info again? Maybe to get reviews....
 function onProductEnter(nextRouterState) {
   const productId = nextRouterState.params.productId;
-  store.dispatch(fetchProductById(productId));
+
+  store.dispatch(fetchProductById(productId))
 }
 
 //this is the React.DOM render method

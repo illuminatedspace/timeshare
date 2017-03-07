@@ -39,7 +39,7 @@ export const fetchProducts = () =>
       .catch(console.error.bind(console))
 
 export const fetchProductById = (productId) =>
-  dispatch =>
+  dispatch => {
     axios.get(`/api/products/${productId}`)
       .then(response => {
         const product = response.data
@@ -47,6 +47,8 @@ export const fetchProductById = (productId) =>
       })
       .catch(console.error.bind(console))
 
+  }
+    
 // sync action creator, reducer will put received products on the state
 export const receiveProducts = products => ({
   type: RECEIVE_PRODUCTS, products
