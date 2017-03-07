@@ -5,6 +5,10 @@ import TextField from 'material-ui/TextField'
 import Divider from 'material-ui/Divider'
 import RaisedButton from 'material-ui/RaisedButton'
 
+  const style = {
+    marginTop: 20,
+  }
+
 
 export default class Checkout extends Component{
   constructor (props) {
@@ -32,25 +36,24 @@ export default class Checkout extends Component{
     })
   }
 
+/*THIS NEEDS TO BE IN CART CONTAINER
   handleSubmit (event) {
 
-  }
+  }*/
 
   render () {
     return (
-      <Paper zDepth={1}>
+      <Paper zDepth={1} className="checkout-card">
         <h2>Checkout</h2>
         <form onSubmit={this.props.handleSubmit}>
           <h3>Address Information</h3>
           <TextField
             onChange={this.handleChange}
             floatingLabelText="Full Name"
-            errorText="This field is required"
           /><br />
           <TextField
             onChange={this.handleChange}
             floatingLabelText="Address"
-            errorText="This field is required"
           /><br />
           <TextField
             onChange={this.handleChange}
@@ -59,36 +62,30 @@ export default class Checkout extends Component{
           <TextField
             onChange={this.handleChange}
             floatingLabelText="City"
-            errorText="This field is required"
           /><br />
           <TextField
             onChange={this.handleChange}
             floatingLabelText="State"
-            errorText="This field is required"
           /><br />
           <TextField
             onChange={this.handleChange}
             floatingLabelText="Zip Code"
-            errorText="This field is required"
           /><br />
-        <Divider />
+        <Divider className="divider" style={style} />
           <h3>Payment Information</h3>
           <TextField
             onChange={this.handleChange}
             floatingLabelText="CCN"
-            errorText="This field is required"
           /><br />
           <TextField
             onChange={this.handleChange}
             floatingLabelText="Security Number"
-            errorText="This field is required"
           /><br />
           <TextField
             onChange={this.handleChange}
             floatingLabelText="Expiration Date"
-            errorText="This field is required"
           /><br />
-          <RaisedButton label="Checkout" primary={true} />
+          <RaisedButton label="Pay Now" primary={true} className="pay-button"/>
         </form>
       </Paper>
     )
