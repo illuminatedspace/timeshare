@@ -18,7 +18,7 @@ export default function Products (props) {
             products.length && products.map(product => (
               <div key={product.id}>
                 <Link to={`/products/${product.id}`}>
-                  <Paper zDepth={2} className="product-card">
+                  <Paper zDepth={2} className="product-card" style={{background: '#EEEEEE'}}>
                     <Paper zDepth={3} className="product-img">
                       <img src={product.photo} />
                     </Paper>

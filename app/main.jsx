@@ -12,6 +12,7 @@ import CartContainer from './containers/CartContainer'
 // import Login from './components/Login'
 // import WhoAmI from './components/WhoAmI'
 import App from './components/App'
+/*import Cart from './components/Cart'*/
 
 import {fetchProducts, fetchProductById} from './reducers/products'
 
@@ -23,7 +24,7 @@ function onProductsEnter() {
 function onProductEnter(nextRouterState) {
   const productId = nextRouterState.params.productId;
   store.dispatch(fetchProductById(productId));
-};
+}
 
 //this is the React.DOM render method
 render(
