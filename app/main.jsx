@@ -12,6 +12,7 @@ import CartContainer from './containers/CartContainer'
 // import Login from './components/Login'
 // import WhoAmI from './components/WhoAmI'
 import App from './components/App'
+/*import Cart from './components/Cart'*/
 
 import {fetchProducts, fetchProductById} from './reducers/products'
 
@@ -22,8 +23,9 @@ function onProductsEnter() {
 // do we really need to go fetch this info again? Maybe to get reviews....
 function onProductEnter(nextRouterState) {
   const productId = nextRouterState.params.productId;
+
   store.dispatch(fetchProductById(productId))
-};
+}
 
 //this is the React.DOM render method
 render(
