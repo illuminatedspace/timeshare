@@ -7,6 +7,7 @@ import store from './store'
 
 import ProductsContainer from './containers/ProductsContainer'
 import ProductContainer from './containers/ProductContainer'
+import CartContainer from './containers/CartContainer'
 
 // import Login from './components/Login'
 // import WhoAmI from './components/WhoAmI'
@@ -32,7 +33,7 @@ render(
       <Route path="/" component={App}>
         <Route path="/products" component={ProductsContainer} onEnter={onProductsEnter} />
         <Route path="/products/:productId" component={ProductContainer}  onEnter={onProductEnter} />
-{/*        <Route path="/cart" component={Cart} />*/}
+        <Route path="/cart" component={CartContainer} />
         <IndexRedirect to="/products" />
       </Route>
     </Router>
