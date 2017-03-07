@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import NavBarContainer from '../containers/NavBarContainer'
+import NavbarContainer from '../containers/NavbarContainer'
 //needed for onTouchTap
 //http://www.material-ui.com/#/get-started/installation
 import injectTapEventPlugin from 'react-tap-event-plugin'
@@ -17,7 +17,7 @@ export default function App ({ children }) {
   return (
     <MuiThemeProvider>
       <div>
-        <NavBarContainer component={NavBarContainer} />
+        <NavbarContainer component={NavbarContainer} />
         <div id='dynamic-view'>
           { children }
         </div>
