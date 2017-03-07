@@ -8,6 +8,9 @@ html {
   background: linear-gradient(45deg, #a9a7cc 0%,#f7e3f5 50%,#cee7e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9a7cc', endColorstr='#cee7e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+body {
+  margin: 0px;
+}
 
 .product-name {
   font-size: 3em;
@@ -49,4 +52,8 @@ html {
 
 .product-card .product-info .submit {
   margin: 0 0 0 20px;
+}
+
+.subnavbar {
+  background-color: #4527A0
 }

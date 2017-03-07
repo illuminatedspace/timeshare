@@ -1,14 +1,34 @@
-import React from 'react'
+import React, {Component} from 'react'
+import { connect } from 'react-redux'
 
-import AppBar from '../components/AppBar'
-import SubNav from '../components/SubNav'
-import AdminNav from '../components/AdminNav'
+import PrimaryNavBar from '../components/PrimaryNavBar'
+import SubNavBar from '../components/SubNavBar'
+import Categories from './CategoriesContainer'
+import {deepPurple900} from 'material-ui/styles/colors'
+//import AdminNav from '../components/AdminNav'
 
-export default function NavbarContainer () {
-  return (
-  <div>
-    <AppBar />
+class NavBarContainer extends Component {
+  constructor () {
+    super()
+  }
 
-  </div>
-  )
+  render () {
+    return (
+      <div>
+        <PrimaryNavBar />
+        <SubNavBar />
+      </div>
+    )
+  }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    categories: state.categories
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  //mapDispatchToProps
+)(NavBarContainer)

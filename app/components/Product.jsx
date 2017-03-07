@@ -14,7 +14,7 @@ const Product = (props) => {
 // renders selected product & allows user to add chosen quantity to cart
     return (
         <Paper zDepth={2}>
-            <div className="product-card">
+            <div className="product-card" style={{background: '#EEEEEE'}}>
                 <Paper zDepth={3} className="product-img">
                     <img src={ product.photo } />
                 </Paper>
