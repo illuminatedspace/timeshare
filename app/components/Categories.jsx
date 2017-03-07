@@ -8,29 +8,29 @@ export default function Categories (props) {
 
 	return (
 		<div>
-				<FlatButton 
+			<FlatButton 
 				label={categories[0].name}
 				href={`/category/${categories[0].id}`}
 				style={{
 					color: '#81D4FA',
 				}}>
-				</FlatButton>
+			</FlatButton>
 
-				<FlatButton 
+			<FlatButton 
 				label={categories[1].name}
 				href={`/category/${categories[1].id}`}
 				style={{
 					color: '#81D4FA',
 				}}>
-				</FlatButton>
+			</FlatButton>
 
-								<FlatButton 
+			<FlatButton 
 				label={categories[2].name}
 				href={`/category/${categories[2].id}`}
 				style={{
 					color: '#81D4FA',
 				}}>
-				</FlatButton>
+			</FlatButton>
 		</div>
 	)
 } 

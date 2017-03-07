@@ -1,6 +1,3 @@
-import React, {Component} from 'react'
-import { Link } from 'react-router'
-
 import Categories from '../components/Categories'
 import { connect } from 'react-redux'
 

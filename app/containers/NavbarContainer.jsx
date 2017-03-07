@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 
 import PrimaryNavBar from '../components/PrimaryNavBar'
 import SubNavBar from '../components/SubNavBar'
-import Categories from './CategoriesContainer'
-import {deepPurple900} from 'material-ui/styles/colors'
+
 //import AdminNav from '../components/AdminNav'
 
 class NavBarContainer extends Component {
@@ -30,5 +29,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  //mapDispatchToProps
 )(NavBarContainer)
