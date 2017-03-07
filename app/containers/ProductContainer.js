@@ -36,8 +36,6 @@ class ProductContainer extends Component {
     render () {
         return (
             <div>
-                {/* Link being here is temporary, for testing purposes*/}
-                <Link to='/cart'>Cart</Link>
                 <Product
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
