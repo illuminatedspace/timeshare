@@ -1,6 +1,6 @@
 // Container pulls state and passes state AND METHODS to cart component as props
 import React, {Component} from 'react'
-import { connect } from 'react-redux' 
+import { connect } from 'react-redux'
 
 //import { fetchProductbyId } from '../reducers/products'
 import Cart from '../components/Cart'
@@ -33,10 +33,10 @@ class CartContainer extends Component {
         //get products info from products on the srote's state based on productIds currently in the cart
         return (
             <div>
-                <Cart 
-                    handleChange={this.handleChange} 
-                    handleCheckout={this.handleCheckout} 
-                    handleUpdate={this.props.updateQuant} 
+                <Cart
+                    handleChange={this.handleChange}
+                    handleCheckout={this.handleCheckout}
+                    handleUpdate={this.props.updateQuant}
                     productsInCart={this.props.productsInCart}
                     cart={this.props.cart} />
                 {}

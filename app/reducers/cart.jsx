@@ -7,6 +7,7 @@ const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 const initialCartState = {
   quantities: [],
   productIds: [],
+  prices: [],
 }
 
 const reducer = (state = initialCartState, action) => {
@@ -27,7 +28,8 @@ const reducer = (state = initialCartState, action) => {
             const ind = productIds.indexOf(action.id)
             newState.productIds.filter(id => id !== action.id)
             newState.quantities.filter((quantity, i) => i !== ind)
-            break     
+            newState.prices.filter((price, i) => i !== ind)
+            break
 
         default:
             return state
@@ -36,15 +38,15 @@ const reducer = (state = initialCartState, action) => {
 
 }
 /* --------- ACTION CREATORS ---------- */
-export const addToCart = (id, quantity) => ({
+export const addToCart = (id, quantity, price) => ({
     type: ADD_TO_CART,
-    id: id, 
+    id: id,
     quantity: quantity
 })
 
 export const updateQuant = (id, quantity) => ({
     type: UPDATE_QUANT,
-    id: id, 
+    id: id,
     quantity: quantity,
 })
 

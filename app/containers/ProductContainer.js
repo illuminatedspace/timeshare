@@ -38,9 +38,9 @@ class ProductContainer extends Component {
             <div>
                 {/* Link being here is temporary, for testing purposes*/}
                 <Link to='/cart'>Cart</Link>
-                <Product 
-                    handleChange={this.handleChange} 
-                    handleSubmit={this.handleSubmit} 
+                <Product
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
                     selectedProduct={this.props.selectedProduct}/>
             </div>
         )
