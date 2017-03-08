@@ -9,9 +9,6 @@ import PrimaryNavBar from '../components/PrimaryNavBar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Paper from 'material-ui/Paper'
 
-// import Footer from './Footer'
-
-
 //need to be wrapped in other divs for custom rendering with material
 export default function App ({ children }) {
   return (
@@ -21,7 +18,6 @@ export default function App ({ children }) {
         <div id='dynamic-view'>
           { children }
         </div>
-        {/*<Footer />*/}
       </div>
     </MuiThemeProvider>
   )
