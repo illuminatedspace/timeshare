@@ -9,11 +9,10 @@ import ActionShoppingCart from 'material-ui/svg-icons/action/shopping-cart'
 import addPhoto from 'material-ui/svg-icons/image/add-a-photo'
 import Avatar from 'material-ui/Avatar'
 
-const styles = {
-
-}
 //buttons have to be wrapped in a div to fit in iconElementRight
-const rightButtons = (
+
+const PrimaryNavBar = (props) => {
+  const rightButtons = (
       <div>
         <Link to='/'>
           <FlatButton label="Home"
@@ -21,7 +20,7 @@ const rightButtons = (
               color: '#81D4FA'
           }} />
         </Link>
-        <Avatar />
+        <Avatar src="/karlie-kloss.jpg"/>
         <FlatButton label="Sign In"
         style={{
           color: '#81D4FA'
@@ -32,7 +31,7 @@ const rightButtons = (
         }} />
         <Link to="/cart">
           <Badge
-            badgeContent={2}
+            badgeContent={props.cart.productIds.length}
             primary={true}
             badgeStyle={{top: 12, right: 12}}
           >
@@ -44,7 +43,7 @@ const rightButtons = (
       </div>
 )
 
-const PrimaryNavBar = () => (
+  return (
   <AppBar
     title="TimeShare"
     iconElementRight={rightButtons}
@@ -54,5 +53,6 @@ const PrimaryNavBar = () => (
     }}
   />
 )
+}
 
 export default PrimaryNavBar
