@@ -10,11 +10,17 @@ import addPhoto from 'material-ui/svg-icons/image/add-a-photo'
 import Avatar from 'material-ui/Avatar'
 
 const styles = {
-  
+
 }
 //buttons have to be wrapped in a div to fit in iconElementRight
 const rightButtons = (
       <div>
+        <Link to='/'>
+          <FlatButton label="Home"
+            style={{
+              color: '#81D4FA'
+          }} />
+        </Link>
         <Avatar />
         <FlatButton label="Sign In"
         style={{
@@ -25,15 +31,15 @@ const rightButtons = (
           color: '#81D4FA'
         }} />
         <Link to="/cart">
-        <Badge
-          badgeContent={2}
-          primary={true}
-          badgeStyle={{top: 12, right: 12}}
-        >
-          <IconButton >
-            <ActionShoppingCart />
-          </IconButton>
-        </Badge>
+          <Badge
+            badgeContent={2}
+            primary={true}
+            badgeStyle={{top: 12, right: 12}}
+          >
+            <IconButton >
+              <ActionShoppingCart />
+            </IconButton>
+          </Badge>
         </Link>
       </div>
 )
