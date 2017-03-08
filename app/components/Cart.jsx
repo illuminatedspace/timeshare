@@ -12,7 +12,6 @@ const Cart = (props) => {
     //right now we don't have prices on the state
     //const prices = props.cart.prices
 
-    console.log('inside Cart component, props=', props)
 
     // renders selected product & allows user to add chosen quantity to cart
     // TODO: total, remove button, update quant button
@@ -31,7 +30,7 @@ const Cart = (props) => {
                 </ul>
                 <RaisedButton type="submit" onSubmit={props.handleUpdate} secondary={true} label="Update" />
             </form>
-            <RaisedButton type="submit" label="Checkout" primary={true} />
+            <RaisedButton type="submit" onClick={props.handleCheckout} label="Checkout" primary={true} />
         </Paper>
     )
 }

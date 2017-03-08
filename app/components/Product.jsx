@@ -27,7 +27,7 @@ const Product = (props) => {
                         <input
                             type="number"
                             min="1"
-                            value="1"
+                            value={props.quantValue}
                             name="quantity"
                             id="quantity"
                             onChange={props.handleChange}

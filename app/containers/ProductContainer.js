@@ -25,12 +25,12 @@ class ProductContainer extends Component {
 // handles click of Add to Cart button
     handleSubmit (event) {
         event.preventDefault()
-        console.log('inside handleSubmit of ProductCotainer this.props=', this.props)
         //passing in 'this' was also floated
         this.props.addToCart(this.props.selectedProduct.id, this.state.quantity)
-        this.setState({
-            quantity: 1
-        })
+        //I don't think we need to re-set quantity back to 1. I think it shold stay whatever the user selected.
+        // this.setState({
+        //     quantity: 1
+        // })
     }
 // passes handlers to component
     render () {
@@ -39,7 +39,8 @@ class ProductContainer extends Component {
                 <Product
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
-                    selectedProduct={this.props.selectedProduct}/>
+                    selectedProduct={this.props.selectedProduct}
+                    quantValue={this.state.quantity}/>
             </div>
         )
     }
