@@ -3,8 +3,10 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 
 //import { fetchProductbyId } from '../reducers/products'
-import Cart from '../components/Cart'
 import { updateQuant, removeProduct } from '../reducers/cart'
+import { storeOrder } from '../reducers/order'
+import Cart from '../components/Cart'
+import Checkout from '../components/Checkout'
 
 class CartContainer extends Component {
     constructor (props) {
@@ -13,6 +15,7 @@ class CartContainer extends Component {
         //this.state = Object.assign({}, this.props.cart)
         this.handleChange = this.handleChange.bind(this)
         this.handleCheckout = this.handleCheckout.bind(this)
+        // this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     // componentDidMount() {
@@ -26,10 +29,22 @@ class CartContainer extends Component {
     handleCheckout (event) {
     //     let checkout = false
     }
+    handleSubmit (event) {
+        event.preventDefault()
+        console.log('shipping address', this.state.shippingAddress)
+        this.props.storeOrder(this.state.shippingAddress, this.props.cart, this.props.productsInCart)
+        this.setState({
+          payment: {
+            ccn: null,
+            securityNumber: null,
+            expirationDate: null,
+          }
+        })
+      }
     // passes props to Cart and Checkout Components
     // TODO: ternary statement for Checkout visibility
     render () {
-        console.log('inside CartCotainer, props=', this.props)
+        console.log('inside CartContainer, props=', this.props)
         //get products info from products on the srote's state based on productIds currently in the cart
         return (
             <div>
@@ -39,8 +54,7 @@ class CartContainer extends Component {
                     handleUpdate={this.props.updateQuant}
                     productsInCart={this.props.productsInCart}
                     cart={this.props.cart} />
-                {}
-                {/*<Checkout handleSubmit={handleSubmit}/>*/}
+                <Checkout handleSubmit={this.handleSubmit}/>
             </div>
         )
     }
@@ -64,6 +78,17 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         removeProduct: (id) => {
             dispatch(removeProduct(id))
+        },
+        storeOrder: (address, cart, productsInCart) => {
+            let quantities = cart.quantities
+            let productIds = cart.productIds
+            let prices = productsInCart.map((product) => product.price)
+            let arrays = {
+                quantities: quantities,
+                prices: prices,
+                products: productIds,
+            }
+            dispatch(storeOrder(address, arrays))
         },
         // we've decided not to fetch product's info again for now...
         // fetchProductById: (id) => {

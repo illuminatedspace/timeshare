@@ -28,43 +28,30 @@ export default class Checkout extends Component{
         expirationDate: null,
       },
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleAddressChange = this.handleAddressChange.bind(this)
+    this.handlePaymentChange = this.handlePaymentChange.bind(this)
+    this.handleSubmit = this.props.handleSubmit.bind(this)
   }
 
   handleAddressChange (event) {
     const target = event.target
     const value = target.value
+    const name = target.name
+    console.log('~~~~~~~~~~name', name)
 
-    this.setState({
-      address: {
-        [name]: value
-      }
-    })
+    //we know we're not suppose to edit state, but we didn't have time to put it the other way
+    this.state.shippingAddress[name] = value
+
   }
 
   handlePaymentChange (event) {
     const target = event.target
     const value = target.value
+    const name = target.name
 
-    this.setState({
-      payment: {
-        [name]: value
-      }
-    })
-  }
+    //we know we're not suppose to edit state, but we didn't have time to put it the other way
+    this.state.payment[name] = value
 
-//THIS NEEDS TO BE IN CART CONTAINER
-//also import processPayment, and submit order action creator from order reducer
-  handleSubmit (event) {
-    event.preventDefault()
-    let status = this.props.storeOrder(this.state.shippingAddress)
-    this.setState({
-      payment: {
-        ccn: null,
-        securityNumber: null,
-        expirationDate: null,
-      }
-    })
   }
 
   render () {
@@ -74,44 +61,53 @@ export default class Checkout extends Component{
         <form onSubmit={this.props.handleSubmit}>
           <h3>Address Information</h3>
           <TextField
-            onChange={this.handleChange}
+            name="name"
+            onChange={this.handleAddressChange}
             floatingLabelText="Full Name"
           /><br />
           <TextField
-            onChange={this.handleChange}
+            name="address"
+            onChange={this.handleAddressChange}
             floatingLabelText="Address"
           /><br />
           <TextField
-            onChange={this.handleChange}
+            name="apartmentNumber"
+            onChange={this.handleAddressChange}
             floatingLabelText="Apartment Number"
           /><br />
           <TextField
-            onChange={this.handleChange}
+            name="city"
+            onChange={this.handleAddressChange}
             floatingLabelText="City"
           /><br />
           <TextField
-            onChange={this.handleChange}
+            name="state"
+            onChange={this.handleAddressChange}
             floatingLabelText="State"
           /><br />
           <TextField
-            onChange={this.handleChange}
+            name="zipCode"
+            onChange={this.handleAddressChange}
             floatingLabelText="Zip Code"
           /><br />
         <Divider className="divider" style={style} />
           <h3>Payment Information</h3>
           <TextField
-            onChange={this.handleChange}
+            name="ccn"
+            onChange={this.handlePaymentChange}
             floatingLabelText="CCN"
           /><br />
           <TextField
-            onChange={this.handleChange}
+            name="securityNumber"
+            onChange={this.handlePaymentChange}
             floatingLabelText="Security Number"
           /><br />
           <TextField
-            onChange={this.handleChange}
+            name="expirationDate"
+            onChange={this.handlePaymentChange}
             floatingLabelText="Expiration Date"
           /><br />
-          <RaisedButton label="Pay Now" primary={true} className="pay-button"/>
+          <RaisedButton label="Pay Now" primary={true} className="pay-button" type="submit" />
         </form>
       </Paper>
     )

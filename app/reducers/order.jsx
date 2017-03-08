@@ -35,18 +35,17 @@ export const processPayment = (payment) => ({
     expirationDate: payment.expirationDate,
 })
 
-export const submitOrder = (shippingAddress) => ({
+export const submitOrder = () => ({
     type: SUBMIT_ORDER,
-    shippingAddress: shippingAddress,
+    cart: {},
 })
 
 /* --------- ASYNC ACTION CREATORS ---------- */
-export const storeOrder = (address) =>
+export const storeOrder = (address, cart) =>
     dispatch => {
-        let order = {status: 'created',
-                     shippingAddress: address}
-        axios.post('/api/orders', order)
-        .then(() => dispatch(submitOrder(order.shippingAddress)))
+
+        axios.post('/api/orders', cart)
+        // .then(() => dispatch(submitOrder()))
         .catch(console.error)
     }
 
