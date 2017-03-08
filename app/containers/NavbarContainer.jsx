@@ -7,14 +7,14 @@ import SubNavBar from '../components/SubNavBar'
 //import AdminNav from '../components/AdminNav'
 
 class NavBarContainer extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
   }
 
   render () {
     return (
       <div>
-        <PrimaryNavBar />
+        <PrimaryNavBar cart={this.props.cart}/>
         <SubNavBar />
       </div>
     )
@@ -23,7 +23,8 @@ class NavBarContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    categories: state.categories
+    categories: state.categories,
+    cart: state.cart,
   }
 }
 
