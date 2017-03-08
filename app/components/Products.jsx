@@ -3,6 +3,7 @@ import React from 'react';
 import {Link} from 'react-router'
 
 import Paper from 'material-ui/Paper'
+import Divider from 'material-ui/Divider'
 
 export default function Products (props) {
 
@@ -10,7 +11,7 @@ export default function Products (props) {
   const products = props.products.products
   return (
     <div>
-      <h1>Takin' time to make time!</h1>
+      <Divider />
       <div>
         <h2>Products</h2>
         <div className="products">
