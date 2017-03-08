@@ -13,25 +13,28 @@ class CartContainer extends Component {
         super(props)
         //not sure why we're putting the store's state from props onto the local state
         //this.state = Object.assign({}, this.props.cart)
+
+        this.state = {
+            showCheckout: false
+        }
+
         this.handleChange = this.handleChange.bind(this)
         this.handleCheckout = this.handleCheckout.bind(this)
-        // this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    // componentDidMount() {
-
-    // }
     // TODO: handles info typed into quantity box
     handleChange (event) {
     //     this.setState({event.target.value})
     }
     // TODO: figure out this flag
     handleCheckout (event) {
-    //     let checkout = false
+         this.setState({
+             showCheckout: !this.state.showCheckout
+         })
     }
     handleSubmit (event) {
         event.preventDefault()
-        console.log('shipping address', this.state.shippingAddress)
         this.props.storeOrder(this.state.shippingAddress, this.props.cart, this.props.productsInCart)
         this.setState({
           payment: {
@@ -44,7 +47,6 @@ class CartContainer extends Component {
     // passes props to Cart and Checkout Components
     // TODO: ternary statement for Checkout visibility
     render () {
-        console.log('inside CartContainer, props=', this.props)
         //get products info from products on the srote's state based on productIds currently in the cart
         return (
             <div>
@@ -54,7 +56,12 @@ class CartContainer extends Component {
                     handleUpdate={this.props.updateQuant}
                     productsInCart={this.props.productsInCart}
                     cart={this.props.cart} />
-                <Checkout handleSubmit={this.handleSubmit}/>
+                {
+                    this.state.showCheckout ? 
+                        <Checkout handleSubmit={this.handleSubmit}/> : 
+                        null 
+                }
+                
             </div>
         )
     }

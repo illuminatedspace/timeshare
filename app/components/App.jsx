@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import NavbarContainer from '../containers/NavbarContainer'
 //needed for onTouchTap
 //http://www.material-ui.com/#/get-started/installation
-import injectTapEventPlugin from 'react-tap-event-plugin'
+//import injectTapEventPlugin from 'react-tap-event-plugin'
 
 //equivalent to nav bar
 import PrimaryNavBar from '../components/PrimaryNavBar'

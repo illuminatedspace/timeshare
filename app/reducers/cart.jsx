@@ -15,13 +15,25 @@ const reducer = (state = initialCartState, action) => {
 
     switch(action.type) {
         case ADD_TO_CART:
-            newState.productIds = newState.productIds.concat([action.id])
-            newState.quantities = newState.quantities.concat([action.quantity])
+            if (newState.productIds.includes(action.id)) {
+                //if this products is already in the cart, need to increment it's quanity
+                const index = newState.productIds.indexOf(action.id)
+                //slice before and after the target quantity, concat it all together with the target quanity incremented by action.quanity
+                //necessary to not mutate the original array
+                newState.quantities = newState.quantities.slice(0, index).concat(+newState.quantities[index] + +action.quantity).concat(newState.quantities.slice((index+1), newState.quantities.length))
+            } else {
+                newState.productIds = newState.productIds.concat([action.id])
+                newState.quantities = newState.quantities.concat([action.quantity])
+            }
+            
             break
 
         case UPDATE_QUANT:
-            const index = productIds.indexOf(action.id)
-            newState.quantities[index] = action.quantity
+            //if this products is already in the cart, need to increment it's quanity
+            const index = newState.productIds.indexOf(action.id)
+            //slice before and after the target quantity, concat it all together with the target quanity incremented by action.quanity
+            //necessary to not mutate the original array
+            newState.quantities = newState.quantities.slice(0, index).concat(+newState.quantities[index] + +action.quantity).concat(newState.quantities.slice((index+1), newState.quantities.length))
             break
 
         case REMOVE_PRODUCT:
