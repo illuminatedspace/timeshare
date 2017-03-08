@@ -9,11 +9,19 @@ import ActionShoppingCart from 'material-ui/svg-icons/action/shopping-cart'
 import addPhoto from 'material-ui/svg-icons/image/add-a-photo'
 import Avatar from 'material-ui/Avatar'
 
-//buttons have to be wrapped in a div to fit in iconElementRight
 
 const PrimaryNavBar = (props) => {
+const leftElements = (
+  <div>
+    <div className="site-title">
+        TimeShare
+    </div>
+    <div className="tagline"><em>Takin' time to make time!</em></div>
+  </div>
+)
+
   const rightButtons = (
-      <div>
+      <div className="right-buttons-wrapper">
         <Link to='/'>
           <FlatButton label="Home"
             style={{
@@ -45,11 +53,13 @@ const PrimaryNavBar = (props) => {
 
   return (
   <AppBar
-    title="TimeShare"
     iconElementRight={rightButtons}
+    iconElementLeft={leftElements}
     className="primnavbar"
     style={{
       backgroundColor: '#311B92',
+      fontSize: '1em',
+      color: '#4FC3F7',
     }}
   />
 )

@@ -6,13 +6,13 @@ import FlatButton from 'material-ui/FlatButton'
 import CategoriesContainer from '../containers/CategoriesContainer';
 
 const leftButtons = (
-    <div>
+    <div className="left-elements-wrapper">
         <CategoriesContainer/>
     </div>
 )
 
 const SubNavBar = () => (
-      <AppBar iconElementLeft={leftButtons} 
+      <AppBar iconElementLeft={leftButtons}
       className="subnavbar"
       style={{
       backgroundColor: '#4527A0',

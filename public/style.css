@@ -13,7 +13,7 @@ body {
 }
 
 .product-name {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 /*this container makes everything below the app bar a step in*/
@@ -36,18 +36,17 @@ body {
   display: inline;
 }
 
-.product-card .product-info {
-  margin: 0 0 0 10px;
-  padding: 0 0 0 10px;
+.product-card .product-name {
+  margin-top: 10px;
 }
 
 .product-card .product-info {
-  margin: 0 0 0 10px;
+  margin: auto 0 auto 50px;
   padding: 0 0 0 10px;
 }
 
 .product-card .product-info p, .product-price {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .product-card .product-info .submit {
@@ -61,7 +60,7 @@ body {
 }
 
 .checkout-card {
-  margin: -10px 20px 0 20px;
+  margin: 20px 0;
   padding: 20px;
   z-index: 1;
 }
@@ -74,3 +73,37 @@ body {
   margin: 10px 0 0 0;
 }
 
+.site-title {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 3em;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  float: left;
+  clear: none;
+}
+
+.tagline {
+  color: #4FC3F7;
+  margin: 23px 0 0 15px;
+  display: inline;
+  float: left;
+  clear: none;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 2.5em;
+  color: #311B92;
+}
+
+#main .primnavbar .right-buttons-wrapper {
+  margin-top: -10px;
+}
+
+#main .subnavbar .left-elements-wrapper {
+  margin-top: 10px;
+}
