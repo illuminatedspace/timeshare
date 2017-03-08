@@ -56,7 +56,7 @@ export default class Checkout extends Component{
 
   render () {
     return (
-      <Paper zDepth={1} className="checkout-card">
+      <Paper zDepth={3} className="checkout-card">
         <h2>Checkout</h2>
         <form onSubmit={this.props.handleSubmit}>
           <h3>Address Information</h3>
